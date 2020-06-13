@@ -1,0 +1,243 @@
+:root {
+  --tamnoPlava: #140035;
+  --svetloPlava: #39a1ff;
+  --bela: #fff;
+  --svetloSiva: #f7f7f7;
+  --font: 16px;
+  --transition: .4s ease;
+  --padding: 100px 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+}
+
+button {
+  background: var(--tamnoPlava);
+  border: 1px solid var(--tamnoPlava);
+  color: var(--bela);
+  /*razmak unutar elemenata je padding a margina je razmak elemenata*/
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+button:hover {
+  background: var(--bela);
+  color: var(--tamnoPlava);
+  cursor: pointer;
+  box-shadow: 4px 4px var(--tamnoPlava);
+}
+
+.container {
+  /*centrirao dodajuci klasu kontejner koju cu i na ostalim sekcijama*/
+  width: 80%;
+  margin: auto;
+}
+
+.container::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* header */
+header {
+  /*dodajem pozadinsku sliku*/
+  background-image: url(/img/header.jpg);
+  /*sredjujem sa vh gde je vh referenca na visinu editora */
+  height: 125vh;
+  /*centralni deo slike u fokus*/
+  background-position: center;
+  /*nasa slika ce se rasporediti u najboljoj razmeri po nasoj pozadini*/
+  background-size: cover;
+}
+
+header hgroup {
+  padding: 20% 0 0 5%;
+}
+
+header hgroup h1 {
+  font-size: 6rem;
+  text-shadow: 2px 2px var(--bela);
+  color: var(--tamnoPlava);
+}
+
+header hgroup p {
+  font-size: 1.4rem;
+  color: var(--bela);
+  padding-bottom: 30px;
+}
+
+/* about */
+.about {
+  padding: 100px 20px;
+}
+
+.about article:first-child {
+  float: left;
+  width: 45%;
+}
+
+.about article:first-child h2 {
+  font-size: 3rem;
+}
+
+.about article:first-child p {
+  padding-bottom: 20px;
+}
+
+.about article:last-child {
+  float: right;
+  width: 45%;
+  background: var(--svetloPlava);
+  padding: 30px;
+  color: var(--bela);
+}
+
+.about article:last-child h3 {
+  font-size: 2rem;
+}
+
+/* services */
+.services {
+  padding: var(--padding);
+  background: var(--svetloSiva);
+}
+
+.services article {
+  width: 33%;
+  float: left;
+  padding: 20px;
+}
+
+.services img {
+  width: 100%;
+}
+
+.services h2 {
+  font-size: 3rem;
+  color: var(--tamnoPlava);
+}
+
+.services p {
+  padding: 10px 0 30px 0;
+}
+/* projects */
+.projects {
+  padding: var(--padding);
+}
+
+.projects h2 {
+  font-size: 3rem;
+  color: var(--tamnoPlava);
+  text-align: center;
+}
+
+.projects h2 + p {
+  text-align: center;
+  padding: 10px 0 30px 0;
+}
+
+.projects article {
+  width: 33%;
+  float: left;
+  padding: 20px;
+}
+
+.projects img {
+  width: 100%;
+}
+
+.projects h3 {
+  color: var(--tamnoPlava);
+  font-size: 1.5rem;
+}
+
+.projects p {
+  padding: 10px 0 20px 0;
+}
+/* footer */
+footer {
+  background: var(--svetloPlava);
+  padding: var(--padding);
+  color: var(--bela);
+}
+
+footer article {
+  width: 33%;
+  float: left;
+  padding: 20px;
+}
+
+footer h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+footer h3 {
+  font-size: 1.5rem;
+}
+
+footer h3 + p {
+  padding: 20px 0;
+}
+
+/* bottom bar */
+.bottom-bar {
+  background: var(--tamnoPlava);
+  color: var(--bela);
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* responsive */
+@media(max-width: 768px) {
+  header hgroup h1 {
+      font-size: 4rem;
+  }
+  header {
+      background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.99)), url(http://127.0.0.1:49743/img/header.jpg);
+      height: 80vh;
+  }
+  header hgroup p {
+      color: var(--tamnoPlava);
+  }
+  .container {
+      width: 90%;
+  }
+  .about article:first-child {
+      width: 100%;
+      margin-bottom: 40px;
+  }
+  .about article:last-child {
+      width: 100%;
+  }
+  .about article:first-child h2 {
+      font-size: 2rem;
+  }
+  .services article,
+  .projects article,
+  footer article {
+      width: 100%;
+  }
+  .services h2,
+  .projects h2,
+  footer h2 {
+      font-size: 2rem;
+  }
+}
